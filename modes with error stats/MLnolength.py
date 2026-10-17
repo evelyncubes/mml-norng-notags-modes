@@ -19,7 +19,7 @@ for page in range(pages):
     pagen = response.json()["maxmodes"]
     for mode in pagen:
         if mode["avg_length_seconds"] == 0 and "completion_avg_time" not in mode and "calculated_enjoyment" not in mode:
-            f1.append("#"+str(mode["ml_rank"])+" (UL rank: #"+str(mode["ul_rank"])+") - "+mode["title"]+" - "+"<https://fnafmml.com/leaderboard/"+mode["id"]+">")
+            f1.append("#"+str(mode["ml_rank"])+" (UL rank: #"+str(mode["ul_rank"])+") - "+mode["title"]+" - "+"https://fnafmml.com/leaderboard/"+mode["id"])
 call = "https://fnafmml.com/api/maxmodes/list?list=ul"
 response = get(call)
 pages = response.json()["totalPages"]
@@ -28,7 +28,7 @@ for page in range(pages):
     pagen = response.json()["maxmodes"]
     for mode in pagen:
         if mode["avg_length_seconds"] == 0 and "completion_avg_time" not in mode and "calculated_enjoyment" not in mode:
-            f2.append("#"+str(mode["ul_rank"])+" - "+mode["title"]+" - "+"<https://fnafmml.com/leaderboard/"+mode["id"]+">")
+            f2.append("#"+str(mode["ul_rank"])+" - "+mode["title"]+" - "+"https://fnafmml.com/leaderboard/"+mode["id"])
 f = open(file, "a", encoding="utf-8")
 f.write("File last updated: "+curtime+"\n")
 f.write(divider+"ML:\n"+divider)
