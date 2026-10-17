@@ -7,7 +7,7 @@ curtime = curtimeobj.strftime("%A %d %B %Y, %H:%M:%S UTC")
 f1 = []
 f2 = []
 divider = "-------------------------------------------------------------------------\n"
-file = "modes with error stats.txt"
+file = "!modes with error stats.txt"
 if os.path.isfile(file) == False: open(file, "x")
 with open(file, "w") as f:
     f.write("")
